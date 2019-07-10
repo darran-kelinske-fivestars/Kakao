@@ -5,12 +5,12 @@ package com.agoda.kakao.list
 import android.support.test.espresso.DataInteraction
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Root
-import android.support.test.espresso.ViewInteraction
 import android.support.test.espresso.matcher.RootMatchers
 import android.view.View
 import com.agoda.kakao.common.KakaoDslMarker
 import com.agoda.kakao.common.assertions.BaseAssertions
 import com.agoda.kakao.common.builders.ViewBuilder
+import com.agoda.kakao.delegate.ViewInteractionDelegate
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import kotlin.reflect.KClass
@@ -29,7 +29,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     val matcher: Matcher<View>
     val itemTypes: Map<KClass<out KAdapterItem<*>>, KAdapterItemType<KAdapterItem<*>>>
 
-    override val view: ViewInteraction
+    override val view: ViewInteractionDelegate
     override var root: Matcher<Root> = RootMatchers.DEFAULT
 
     /**
@@ -43,7 +43,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
     constructor(builder: ViewBuilder.() -> Unit, itemTypeBuilder: KAdapterItemTypeBuilder.() -> Unit) {
         val vb = ViewBuilder().apply(builder)
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
@@ -83,7 +83,7 @@ class KListView : ScrollViewActions, BaseAssertions, ListViewAdapterAssertions {
         }
 
         matcher = vb.getViewMatcher()
-        view = vb.getViewInteraction()
+        view = vb.getViewInteractionDelegate()
         itemTypes = KAdapterItemTypeBuilder().apply(itemTypeBuilder).itemTypes
     }
 
