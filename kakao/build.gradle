@@ -33,7 +33,7 @@ dependencies {
     implementation libraries.swiperefresh
     implementation libraries.design
     implementation libraries.espresso_core
-    implementation libraries.espresso_web
+    implementation project(libraries.espresso_web)
     implementation libraries.espresso_intents
     implementation libraries.espresso_contrib
 }

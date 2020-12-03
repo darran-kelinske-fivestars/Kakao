@@ -41,5 +41,5 @@ dependencies {
     androidTestImplementation libraries.espresso_rules
     androidTestImplementation libraries.espresso_intents
     androidTestImplementation libraries.espresso_core
-    androidTestImplementation libraries.espresso_web
+    androidTestImplementation project(libraries.espresso_web)
 }
