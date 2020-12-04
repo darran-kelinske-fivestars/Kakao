@@ -1,5 +1,6 @@
 package com.agoda.kakao.delegate
 
+import androidx.test.espresso.Root
 import androidx.test.espresso.web.assertion.WebAssertion
 import androidx.test.espresso.web.model.Atom
 import androidx.test.espresso.web.model.ElementReference
@@ -8,6 +9,7 @@ import androidx.test.espresso.web.sugar.Web
 import com.agoda.kakao.Kakao
 import com.agoda.kakao.intercept.Interceptor
 import com.agoda.kakao.screen.Screen
+import org.hamcrest.Matcher
 import java.util.concurrent.TimeUnit
 
 /**
@@ -29,6 +31,14 @@ class WebInteractionDelegate(override var interaction: Web.WebInteraction<*>) : 
     }
 
     fun get(): Any = interaction.get()
+
+    fun noActivity() = this.also {
+        interaction = interaction.noActivity()
+    }
+
+    fun inRoot(rootMatcher: Matcher<Root>) = this.also {
+        interaction = interaction.inRoot(rootMatcher)
+    }
 
     fun inWindow(window: WindowReference) = this.also {
         interaction = interaction.inWindow(window)

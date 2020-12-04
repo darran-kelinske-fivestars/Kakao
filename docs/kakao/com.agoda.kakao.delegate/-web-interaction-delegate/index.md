@@ -33,8 +33,10 @@ Wraps all available public calls and intercepts [check](check.md) and [perform](
 | [check](check.md) | `fun check(assertion: WebAssertion<*>): `[`WebInteractionDelegate`](./index.md) |
 | [forceJavascriptEnabled](force-javascript-enabled.md) | `fun forceJavascriptEnabled(): `[`WebInteractionDelegate`](./index.md) |
 | [get](get.md) | `fun get(): `[`Any`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html) |
+| [inRoot](in-root.md) | `fun inRoot(rootMatcher: Matcher<Root>): `[`WebInteractionDelegate`](./index.md) |
 | [inWindow](in-window.md) | `fun inWindow(window: WindowReference): `[`WebInteractionDelegate`](./index.md)<br>`fun inWindow(windowPicker: Atom<WindowReference>): `[`WebInteractionDelegate`](./index.md) |
 | [kakaoInterceptor](kakao-interceptor.md) | `fun kakaoInterceptor(): `[`Interceptor`](../../com.agoda.kakao.intercept/-interceptor/index.md)`<WebInteraction<*>, WebAssertion<*>, Atom<*>>?` |
+| [noActivity](no-activity.md) | `fun noActivity(): `[`WebInteractionDelegate`](./index.md) |
 | [perform](perform.md) | `fun perform(atom: Atom<*>): `[`WebInteractionDelegate`](./index.md) |
 | [reset](reset.md) | `fun reset(): `[`WebInteractionDelegate`](./index.md) |
 | [screenInterceptors](screen-interceptors.md) | `fun screenInterceptors(): `[`Deque`](https://developer.android.com/reference/java/util/Deque.html)`<`[`Interceptor`](../../com.agoda.kakao.intercept/-interceptor/index.md)`<WebInteraction<*>, WebAssertion<*>, Atom<*>>>` |
